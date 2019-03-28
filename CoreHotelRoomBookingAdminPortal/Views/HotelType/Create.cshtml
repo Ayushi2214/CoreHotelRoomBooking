@@ -1,0 +1,39 @@
+﻿@model CoreHotelRoomBookingAdminPortal.Models.HotelType
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+@*<form asp-action="Create" asp-controller="HotelType">
+ 
+    <label asp-for="HotelTypeName"></label>
+    <input type="text" asp-for="HotelTypeName" />
+    <br />
+    <label asp-for="HotelTypeDescription"></label>
+    <input type="text" asp-for="HotelTypeDescription" />
+    <br />
+    
+    <input type="Submit" value="Create Type" />
+</form>*@
+
+<form asp-action="Create" asp-controller="HotelType">
+   <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label for="HotelTypeName">HotelTypeName</label>
+        <input type="text" asp-for="HotelTypeName" class="form-control" aria-describedby="name of HotelType" placeholder="Enter HotelType">
+        <span asp-validation-for="HotelTypeName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="HotelTypeDescription">Hotel Type Description</label>
+        <input type="text" asp-for="HotelTypeDescription" class="form-control" aria-describedby="Description of Hotel" placeholder="Enter Hotel Type Description">
+        <span asp-validation-for="HotelTypeDescription" class="text-danger"></span>
+    </div>
+    
+
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+

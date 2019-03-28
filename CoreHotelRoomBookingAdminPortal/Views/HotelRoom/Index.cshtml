@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CoreHotelRoomBookingAdminPortal.Models.HotelRoom>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Hotel Details</h2>
+<a asp-action="Create" asp-controller="HotelRoom" class="btn btn-success">Add new Hotel Room</a>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </th>
+          
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomType)
+                </td>
+               <td>
+                    <a asp-action="Details" asp-route-id="@item.RoomId" class="btn btn-info">Details</a> 
+                    <a asp-action="Edit" asp-route-id="@item.RoomId" class="btn btn-info">Edit</a> 
+                    <a asp-action="Delete" asp-route-id="@item.RoomId" class="btn btn-danger">Delete</a>
+              
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

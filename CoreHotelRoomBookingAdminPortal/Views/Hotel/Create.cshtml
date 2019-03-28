@@ -1,0 +1,115 @@
+﻿@model CoreHotelRoomBookingAdminPortal.Models.Hotel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Create</h2>
+<br />
+<br />
+@*<form asp-action="Create" asp-controller="Hotel">
+
+    <label asp-for="HotelName"></label>
+    <input type="text" asp-for="HotelName" />
+    <br />
+    <label asp-for="HotelDescription"></label>
+    <input type="text" asp-for="HotelDescription" />
+    <br />
+    <label asp-for="HotelAddress"></label>
+    <input type="text" asp-for="HotelAddress" />
+    <br />
+    <label asp-for="District"></label>
+    <input type="text" asp-for="District" />
+    <br />
+    <label asp-for="City"></label>
+    <input type="text" asp-for="City" />
+    <br />
+    <label asp-for="State"></label>
+    <input type="text" asp-for="State" />
+    <br />
+    <label asp-for="Country"></label>
+    <input type="text" asp-for="Country" />
+    <br />
+    <label asp-for="HotelEmailId"></label>
+    <input type="text" asp-for="HotelEmailId" />
+    <br />
+    <label asp-for="HotelRating"></label>
+    <input type="text" asp-for="HotelRating" />
+    <br />
+    <label asp-for="HotelImage"></label>
+    <input type="text" asp-for="HotelImage" />
+    <br />
+    <label asp-for="HotelContactNumber"></label>
+    <input type="text" asp-for="HotelContactNumber" />
+    <br />
+    <label asp-for="HotelTypeId"></label>
+    <select asp-for="HotelTypeId" asp-items="ViewBag.HotelTypes"></select>
+    <br />
+    <input type="submit" value="Create Hotel" />
+</form>*@
+
+<form asp-action="Create" asp-controller="Hotel">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label for="HotelName">Hotel Name</label>
+        <input type="text" asp-for="HotelName" class="form-control" aria-describedby="NameOfHotel" placeholder="Enter HotelName">
+        <span asp-validation-for="HotelName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="HotelDescription">Hotel Description</label>
+        <input type="text" asp-for="HotelDescription" class="form-control" aria-describedby="DescriptionOfHotel" placeholder="Enter Hotel Description">
+        <span asp-validation-for="HotelDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="HotelAddress">Hotel Adress</label>
+        <input type="text" asp-for="HotelAddress" class="form-control" aria-describedby="AddressOfHotel" placeholder="Enter Hotel Address">
+        <span asp-validation-for="HotelAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="District">District</label>
+        <input type="text" asp-for="District" class="form-control" aria-describedby="NameOfDistrict" placeholder="Enter District Name">
+
+    </div>
+    <div class="form-group">
+        <label for="City">City</label>
+        <input type="text" asp-for="City" class="form-control" aria-describedby="NameOfCity" placeholder="Enter City Name">
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="State">State</label>
+        <input type="text" asp-for="State" class="form-control" aria-describedby="NameOfState" placeholder="Enter State Name">
+        <span asp-validation-for="State" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Country">Country</label>
+        <input type="text" asp-for="Country" class="form-control" aria-describedby="NameOfCountry" placeholder="Enter Country">
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" asp-for="HotelEmailId" class="form-control" aria-describedby="NameOfHotelEmailId" placeholder="Enter HotelEmail Id">
+        <span asp-validation-for="HotelEmailId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Rating">Rating</label>
+        <input type="text" asp-for="HotelRating" class="form-control" aria-describedby="Rating" placeholder="Enter Hotel Rating">
+        <span asp-validation-for="HotelRating" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="HotelContactNumber">Hotel Contact Number</label>
+        <input type="text" asp-for="HotelContactNumber" class="form-control" aria-describedby="NumberOfHotel" placeholder="Enter HotelNumber">
+        <span asp-validation-for="HotelContactNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="HotelTypeId">Hotel Type Id</label>
+        <select asp-for="HotelTypeId" asp-items="ViewBag.HotelTypes"></select>
+    </div>
+    
+        <div class="form-group">
+            <label for="HotelImage">Hotel Image</label>
+            <input type="text" asp-for="HotelImage" class="form-control" aria-describedby="ImageOfHotel" placeholder="Enter HotelImage">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>

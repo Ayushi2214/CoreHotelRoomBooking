@@ -1,0 +1,22 @@
+﻿@model CoreHotelRoomBookingAdminPortal.Models.HotelType
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Edit</h2>
+
+<form asp-action="Edit" asp-controller="HotelType">
+    <input type="hidden" asp-for="HotelTypeId" />
+    <label asp-for="HotelTypeName"></label>
+    <input type="text" asp-for="HotelTypeName" />
+    <br />
+    <label asp-for="HotelTypeDescription"></label>
+    <input type="text" asp-for="HotelTypeDescription" />
+    <br />
+    
+    @*<label asp-for="HotelTypeId"></label>
+    <select asp-for="HotelTypeId" asp-items="ViewBag.HotelTypes"></select>
+    <br />*@
+    <input type="submit" value="Edit Hotel Type" />
+</form>
+

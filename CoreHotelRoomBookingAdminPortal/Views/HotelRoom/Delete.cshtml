@@ -1,0 +1,30 @@
+﻿@model CoreHotelRoomBookingAdminPortal.Models.HotelRoom
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h2>Delete</h2>
+<h3>Are You Sure You Want To delete this?</h3>
+<form asp-action="Delete" asp-controller="HotelRoom">
+    <input type="hidden" asp-for="RoomId" />
+    <br />
+    <label asp-for="RoomType"></label>
+    <input asp-for="RoomType" />
+    <br />
+    <label asp-for="RoomPrice"></label>
+    <input asp-for="RoomPrice" />
+    <br />
+    <label asp-for="RoomDescription"></label>
+    <input asp-for="RoomDescription" />
+    <br />
+    <label asp-for="RoomImage"></label>
+    <input asp-for="RoomImage" />
+    <br />
+    <label asp-for="HotelId"></label>
+    <select asp-for="HotelId" asp-items="ViewBag.HotelRooms"></select>
+    <br />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+</form>

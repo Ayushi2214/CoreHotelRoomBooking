@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CustomerCoreHotel.Models.HotelRooms>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Index</h2>
+@*<main role="main"></main>*@
+<section class="jumbotron text-center">
+    <div class="container">
+
+       
+        <h1 class="jumbotron-heading">Hotel Room Booking</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        @*<p>
+            <a href="#" class="btn btn-primary my-2">View Offers</a>
+            <a href="#" class="btn btn-secondary my-2">Book Room</a>
+        </p>*@
+    </div>
+</section>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="@item.RoomImage" class="bd-placeholder-img card-img-top"/>
+                        <div class="card-body">
+                            <p class="card-text" style="font-weight:bold;">@item.RoomType</p>
+                            <p class="card-text">@item.RoomDescription</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+
+                                    @*<button type="button" class="btn btn-sm btn-outline-secondary">Book Now</button>*@
+                                    <a asp-controller="Book" asp-action="buy" asp-route-id="@item.RoomId" 
+                                        class="btn-sm btn-outline-secondary">Book Room</a>
+                                    <a asp-controller="HotelRoom" asp-action="ViewDetails" asp-route-id="@item.RoomId" 
+                                        class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">T&C</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+                @*ThumbnailEnd*@
+            </div>
+        
+        </div>
+</div>

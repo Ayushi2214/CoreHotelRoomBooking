@@ -1,0 +1,184 @@
+﻿@model IEnumerable<CustomerCoreHotel.Models.Hotels>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Room Booking</h2>
+<!DOCTYPE html>
+@*<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    <body>
+        <div id="booking" class="section">
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="booking-cta">
+                                <h1>Search Your Hotel</h1>
+                            
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-offset-1">
+                            <div class="booking-form">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text">
+                                                <span class="form-label"> </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control" type="email">
+                                                <span class="form-label">Email</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control" type="tel">
+                                                <span class="form-label">Phone</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <div class="form-group">
+                                                <span class="form-label">Rooms</span>
+                                                <select class="form-control">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                </select>
+                                                <span class="select-arrow"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <div class="form-group">
+                                                <span class="form-label">Guests</span>
+                                                <select class="form-control">
+                                                    <option>1 Person</option>
+                                                    <option>2 People</option>
+                                                    <option>3 People</option>
+                                                </select>
+                                                <span class="select-arrow"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control" type="date" required>
+                                                <span class="form-label">Check In</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control" type="date" required>
+                                                <span class="form-label">Check Out</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-btn">
+                                        <button class="submit-btn">Book Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery.min.js" type="eb13fb0d73aa2b62c6e1c63f-text/javascript"></script>
+        <script type="eb13fb0d73aa2b62c6e1c63f-text/javascript">
+            $('.form-control').each(function () {
+                floatedLabel($(this));
+            });
+
+            $('.form-control').on('input', function () {
+                floatedLabel($(this));
+            });
+
+            function floatedLabel(input) {
+                var $field = input.closest('.form-group');
+                if (input.val()) {
+                    $field.addClass('input-not-empty');
+                } else {
+                    $field.removeClass('input-not-empty');
+                }
+            }
+        </script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="eb13fb0d73aa2b62c6e1c63f-text/javascript"></script>
+        <script type="eb13fb0d73aa2b62c6e1c63f-text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-23581568-13');
+        </script>
+        <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="eb13fb0d73aa2b62c6e1c63f-|49" defer=""></script>
+    </body>
+</html>*@
+    <section class="jumbotron text-center">
+            <div class="container">
+
+
+                <h1 class="jumbotron-heading">Hotel Room Booking</h1>
+                <p class="lead text-muted">
+                    Hotels in India
+                    <br />
+                    Enter your dates and choose from over 50,000 hotels and other places to stay!
+                <p>
+                    <a href="#" class="btn btn-primary my-2">View Offers</a>
+                    <a href="#" class="btn btn-secondary my-2">Book Room</a>
+                </p>
+            </div>
+        </section>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="@item.HotelImage" class="bd-placeholder-img card-img-top" />
+                            <div class="card-body">
+                                <p class="card-text" style="font-weight:bold;">@item.HotelName</p>
+                                <p class="card-text">@item.HotelDescription</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        @*<button type="button" class="btn btn-sm btn-outline-secondary">View Details</button>*@
+                                        @*<button type="button" class="btn btn-sm btn-outline-secondary">Book Now</button>*@
+                                        <a asp-controller="HotelRoom" asp-action="Details" asp-route-id="@item.HotelId"
+
+                                           class="btn-sm btn-outline-secondary">Book Hotel</a>
+                                        <a asp-controller="Home" asp-action="Details"  asp-route-id="@item.HotelId"
+
+                                           class="btn-sm btn-outline-secondary">View Details</a>
+
+                                    </div>
+                                    <small class="text-muted">T&C</small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+                @*ThumbnailEnd*@
+            </div>
+
+        </div>
+    </div>
+

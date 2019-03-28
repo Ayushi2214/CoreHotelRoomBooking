@@ -1,0 +1,37 @@
+﻿@model CoreHotelRoomBookingAdminPortal.Models.roomFacility
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Edit</h2>
+<br />
+<br />
+<form asp-action="Edit" asp-controller="RoomFacility">
+    <input type="hidden" asp-for="RoomFacilityId" />
+    <br />
+    <label asp-for="IsAvailable"></label>
+    <input type="text" asp-for="IsAvailable" />
+    <br />
+    <label asp-for="RoomFacilityDescription"></label>
+    <input type="text" asp-for="RoomFacilityDescription" />
+    <br />
+    <label asp-for="Wifi"></label>
+    <input type="text" asp-for="Wifi" />
+    <br />
+    <label asp-for="AirConditioner"></label>
+    <input type="text" asp-for="AirConditioner" />
+    <br />
+    <label asp-for="Ekettle"></label>
+    <input type="text" asp-for="Ekettle" />
+    <br />
+    <label asp-for="Refrigerator"></label>
+    <input type="text" asp-for="Refrigerator" />
+    <br />
+    <label asp-for="RoomId"></label>
+    <select asp-for="RoomId" asp-items="ViewBag.hotels"></select>
+    <br />
+    <input type="submit" value="Edit RoomFacility" />
+</form>
+
+
+

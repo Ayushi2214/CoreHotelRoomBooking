@@ -1,0 +1,93 @@
+﻿@model CoreHotelRoomBookingAdminPortal.Models.roomFacility
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Create</h2>
+<br />
+<br />
+@*<form asp-action="Create" asp-controller="RoomFacility">
+    <label asp-for="IsAvailable"></label>
+    <input type="text" asp-for="IsAvailable" />
+    <br />
+    <label asp-for="RoomFacilityDescription"></label>
+    <input type="text" asp-for="RoomFacilityDescription" />
+    <br />
+    <label asp-for="Wifi"></label>
+    <input type="text" asp-for="Wifi" />
+    <br />
+    <label asp-for="AirConditioner"></label>
+    <input type="text" asp-for="AirConditioner" />
+    <br />
+    <label asp-for="Ekettle"></label>
+    <input type="text" asp-for="Ekettle" />
+    <br />
+    <label asp-for="Refrigerator"></label>
+    <input type="text" asp-for="Refrigerator" />
+    <br />
+    <label asp-for="RoomId"></label>
+    <select asp-for="RoomId" asp-items="ViewBag.hotels"></select>
+    <br />
+    <input type="submit" value="Create RoomFacility" />
+</form>*@
+
+<form asp-action="Create" asp-controller="RoomFacility">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="IsAvailable" />@Html.DisplayNameFor(model => model.IsAvailable)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="Wifi" />@Html.DisplayNameFor(model => model.Wifi)
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="AirConditioner" />@Html.DisplayNameFor(model => model.AirConditioner)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="Refrigerator" />@Html.DisplayNameFor(model => model.Refrigerator)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="RoomFacilityDescription" class="control-label"></label>
+                    <label asp-for="RoomFacilityDescription" class="form-control" />
+                    <span asp-validation-for="RoomFacilityDescription" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="RoomId" class="control-label"></label>
+                    <select asp-for="RoomId" class="form-control" asp-items="ViewBag.hotels"></select>
+                </div>
+                <input type="submit" value="Create RoomFacility" />
+                @Html.ActionLink("Back to List", "Index")
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
